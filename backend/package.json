@@ -1,0 +1,32 @@
+{
+  "name": "@elysia-svelte/backend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "module": "src/main.ts",
+  "scripts": {
+    "dev": "bun run --watch src/main.ts",
+    "start": "bun run src/main.ts",
+    "worker": "bun run --watch src/jobs/workers/index.ts",
+    "worker:start": "bun run src/jobs/workers/index.ts",
+    "test": "bun test ../tests/backend",
+    "check": "tsc --noEmit",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "bun run src/db/migrate.ts",
+    "db:seed": "bun run src/db/seed.ts"
+  },
+  "dependencies": {
+    "@elysia/cors": "^1.4.2",
+    "@elysia/openapi": "^1.4.16",
+    "drizzle-orm": "^0.45.3",
+    "elysia": "1.4.30",
+    "ioredis": "^6.0.0",
+    "jose": "^6.1.0"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.8",
+    "@types/bun": "^1.4.2",
+    "drizzle-kit": "^0.31.11",
+    "typescript": "^5.9.3"
+  }
+}
